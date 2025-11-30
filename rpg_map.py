@@ -58,7 +58,7 @@ class RPGMap:
 test_map = RPGMap('test_map')
 test_map.add_tile('fields', {
     'narration': "You stand in a vast field. The ground beneath you is as green as emerald.",
-    'inspection': "You only notice the warmth of the sun on your face.",
+    'inspection': "You only notice the beauty of your surroundings.",
     'biome': 'fields',
     'encounter': 15})
 test_map.add_tile('desert', {
