@@ -32,4 +32,5 @@ while True:
             target_map = rpg_maps[map_name]
             response = target_map.get_tile(x, y)
 
+    print(f"Sending response: {response}")
     socket.send_json(response)

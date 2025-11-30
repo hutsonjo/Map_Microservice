@@ -19,8 +19,8 @@ server.py runs as a server using a ZeroMQ REP socket.
 ### Request formats
 To use the NPC Microservice, a client must send a JSON-formatted request which includes the following:
 
-1. `service_key` - identifies which service to use.
-2. `data` - a dict containing the parameters for the map request.
+1. `service_key` (string) - identifies which service to use.
+2. `data` (dict) - Contains the parameters for the map request.
    * `map` (string) - The name of the map being referenced.
    * `coords` (list[int, int]) - x & y coordinates used to find tile information.
 
@@ -43,7 +43,7 @@ socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:55555")
 
 request = {
-   "service_key": "battle_logic",
+   "service_key": "rpg",
    "data": {
       "map": 'test_map', 
       "coords": [5, 5]
