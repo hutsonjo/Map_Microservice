@@ -1,12 +1,10 @@
-ERROR = {'narration': 'Map name does not match save file',
-         'inspection': 'Map name does not match save file',
-         'biome': '',
-         'encounter': 0}
+RPG_ERROR = {'narration': 'Map name does not match save file',
+             'inspection': 'Map name does not match save file',
+             'encounter': 0}
 
-OUTOFBOUNDS = {'narration': 'You only see vast sea where you are trying to go.',
-               'inspection': 'You smell salt.'}
+RPG_OUTOFBOUNDS = {'narration': 'You only see vast sea where you are trying to go.',
+                   'inspection': 'You smell salt.'}
 
-NAME = 'test_map'
 
 SCORCHED = {'narration': "The land that surrounds you is scorched. No life could ever live here.",
             'inspection': "you feel as though you are being watched.",
@@ -34,3 +32,5 @@ test_map = [[SCORCHED, SCORCHED, SCORCHED, SCORCHED, SCORCHED, SCORCHED, SCORCHE
             [SCORCHED, DESERT, FIELDS, FIELDS, FIELDS, FIELDS, DESERT, SCORCHED],
             [SCORCHED, SCORCHED, SCORCHED, SCORCHED, SCORCHED, SCORCHED, SCORCHED, SCORCHED]
             ]
+
+rpg_map_list = ['test_map']
