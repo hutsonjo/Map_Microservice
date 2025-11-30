@@ -16,7 +16,7 @@ while True:
 
     # Error handling for missing service key
     if not service_key:
-        response = {"error": "Missing service_key"}
+        response = {'status': 'error', 'data': "Missing service_key"}
 
     # RPG map service routing
     elif service_key == 'rpg':
@@ -24,14 +24,12 @@ while True:
         x, y = data['coords']
 
         # Error handling for missing or invalid map_name
-        if map_name not in rpg_map_list:
+        if map_name not in rpg_maps:
             response = {'status': 'error', 'data': RPG_ERROR}
 
-        # If new position within bounds of map, add tile info to response, error otherwise
-        if 0 <= x < len(test_map) and 0 <= y < len(test_map[0]):
-            position = test_map[x][y]
-            response = {'status': 'success', 'data': position}
+        # If position within bounds of map, add tile info to response, error otherwise
         else:
-            response = {'status': 'out_of_bounds', 'data': RPG_OUTOFBOUNDS}
+            target_map = rpg_maps[map_name]
+            response = target_map.get_tile(x, y)
 
     socket.send_json(response)
